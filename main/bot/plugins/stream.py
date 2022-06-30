@@ -60,7 +60,7 @@ async def channel_receive_handler(bot, broadcast: Message):
             chat_id=broadcast.chat.id,
             message_id=broadcast.message_id,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Download Link 📥", url=stream_link)]])
+                [[InlineKeyboardButton("📥Download Link📥", url=stream_link)]])
         )
     except FloodWait as w:
         print(f"Sleeping for {str(w.x)}s")
