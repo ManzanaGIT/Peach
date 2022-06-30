@@ -69,7 +69,7 @@ then goto the <a href="#mandatory-vars">variables tab</a> for more info on setti
 
 ```sh
 git clone https://github.com/LuisDanielRM/Peach/
-cd TG-Direct-Link-Generator
+cd Peach
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
 pip install -r requirements.txt
