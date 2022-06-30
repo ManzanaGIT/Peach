@@ -68,7 +68,7 @@ then goto the <a href="#mandatory-vars">variables tab</a> for more info on setti
 ### Host it on VPS or Locally
 
 ```sh
-git clone https://github.com/TechShreyash/TG-Direct-Link-Generator
+git clone https://github.com/LuisDanielRM/Peach/
 cd TG-Direct-Link-Generator
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
