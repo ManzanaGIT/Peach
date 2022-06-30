@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram.errors import MessageDeleteForbidden
 
 
-deldbtnmsg=["Your Already Deleted the Link", "You can't undo the Action", "You can Resend the File to Regenerate New Link", "Why Clicking me Your Link is Dead", "This is Just a Button Showing that Your Link is Deleted"]
+deldbtnmsg=["None", "None", "None", "None", "None"]
 
 @StreamBot.on_callback_query()
 async def cb_data(bot, update: CallbackQuery):
@@ -43,7 +43,7 @@ async def cb_data(bot, update: CallbackQuery):
             await update.message.edit_text(
             text=update.message.text,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("✔️", callback_data=f"msgdelyes_{usr_cmd[1]}_{usr_cmd[2]}"), InlineKeyboardButton("✖️", callback_data=f"msgdelno_{usr_cmd[1]}_{usr_cmd[2]}")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("✅Sure✅", callback_data=f"msgdelyes_{usr_cmd[1]}_{usr_cmd[2]}"), InlineKeyboardButton("❌Cancel❌", callback_data=f"msgdelno_{usr_cmd[1]}_{usr_cmd[2]}")]])
         )
         elif usr_cmd[0] == "msgdelno":
             get_msg = await bot.get_messages(chat_id=Var.BIN_CHANNEL, message_ids=int(usr_cmd[1]))
