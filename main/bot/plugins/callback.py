@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram.errors import MessageDeleteForbidden
 
 
-deldbtnmsg=["None", "None", "None", "None", "None"]
+deldbtnmsg=["{None}", "{None}", "{None}", "{None}", "{None}"]
 
 @StreamBot.on_callback_query()
 async def cb_data(bot, update: CallbackQuery):
@@ -43,7 +43,7 @@ async def cb_data(bot, update: CallbackQuery):
             await update.message.edit_text(
             text=update.message.text,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("✅Sure✅", callback_data=f"msgdelyes_{usr_cmd[1]}_{usr_cmd[2]}"), InlineKeyboardButton("❌Cancel❌", callback_data=f"msgdelno_{usr_cmd[1]}_{usr_cmd[2]}")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("✅", callback_data=f"msgdelyes_{usr_cmd[1]}_{usr_cmd[2]}"), InlineKeyboardButton("❌", callback_data=f"msgdelno_{usr_cmd[1]}_{usr_cmd[2]}")]])
         )
         elif usr_cmd[0] == "msgdelno":
             get_msg = await bot.get_messages(chat_id=Var.BIN_CHANNEL, message_ids=int(usr_cmd[1]))
@@ -68,7 +68,7 @@ async def cb_data(bot, update: CallbackQuery):
                     await update.message.edit_text(
                     text=update.message.text,
                     disable_web_page_preview=True,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Link Deleted", callback_data="msgdeleted")]])
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("♻️Link Deleted♻️", callback_data="msgdeleted")]])
                     )
                 elif resp.empty:
                     await update.answer("Sorry Your File is Missing from the Server", show_alert=True)
