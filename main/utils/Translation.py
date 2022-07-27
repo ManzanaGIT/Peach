@@ -25,7 +25,7 @@ class Language(object):
 """
 
         stream_msg_text ="""
-<u>✅** Successfully Generated Your Link **✅</u>\n
+<u>✅** Link Successfully Generated **✅</u>\n
 <b>📂 File Name :</b> {}\n
 <b>📦 File Size :</b> {}\n
 <b>📥 Download :</b> {}\n
